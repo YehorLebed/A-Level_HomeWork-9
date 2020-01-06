@@ -1,0 +1,24 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "name": "Ivan",
+      "age": 41
+    },
+    {
+      "id": 2,
+      "name": "Maxim",
+      "age": 23
+    },
+    {
+      "id": 3,
+      "name": "Nik",
+      "age": 37
+    },
+    {
+      "id": 4,
+      "name": "Sonya",
+      "age": 18
+    }
+  ]
+}
