@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "firstName": "Миша",
+      "lastName": "Япончик",
+      "age": "32",
+      "email": "misha@gmail.com"
+    },
+    {
+      "id": "2",
+      "firstName": "Арсений",
+      "lastName": "Шевченко",
+      "age": "14",
+      "email": "shevchenko@gmail.com"
+    },
+    {
+      "id": "3",
+      "firstName": "Alina",
+      "lastName": "Semenuta",
+      "age": "28",
+      "email": "semenuta@gmail.com"
+    },
+    {
+      "id": "4",
+      "firstName": "Masha",
+      "lastName": "Kubkina",
+      "age": "30",
+      "email": "kubkina@gmail.com"
+    },
+    {
+      "id": "5",
+      "firstName": "Сергей",
+      "lastName": "Михалков",
+      "age": "45",
+      "email": "Mihalo@gmail.com"
+    }
+  ]
+}

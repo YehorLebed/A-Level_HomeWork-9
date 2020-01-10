@@ -1,0 +1,8 @@
+.btn {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    width: 25px;
+    height: 25px;
+    margin: 5px;
+}
