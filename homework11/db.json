@@ -15,25 +15,18 @@
       "email": "shevchenko@gmail.com"
     },
     {
-      "id": "3",
-      "firstName": "Alina",
-      "lastName": "Semenuta",
-      "age": "28",
-      "email": "semenuta@gmail.com"
+      "id": "7",
+      "firstName": "firstName",
+      "lastName": "lastName",
+      "age": "age",
+      "email": "email777878"
     },
     {
-      "id": "4",
-      "firstName": "Masha",
-      "lastName": "Kubkina",
-      "age": "30",
-      "email": "kubkina@gmail.com"
-    },
-    {
-      "id": "5",
-      "firstName": "Сергей",
-      "lastName": "Михалков",
-      "age": "45",
-      "email": "Mihalo@gmail.com"
+      "id": "11",
+      "firstName": "23123",
+      "lastName": "lastName",
+      "age": "age",
+      "email": "email"
     }
   ]
 }

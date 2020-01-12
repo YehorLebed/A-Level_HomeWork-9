@@ -353,3 +353,14 @@ const counter = counterInit(1);
 window.onload = () => {
     renderTable();
 }
+
+// fix
+function findMaxIndex() {
+    const table = document.querySelector('table');
+    const rows = table.querySelectorAll('tr')
+    let maxIndex;
+    for (let i = 0; i < rows.length; i++) {
+        index.push(rows[i].firstChild.innerText);
+    }
+    console.log(index);
+}
