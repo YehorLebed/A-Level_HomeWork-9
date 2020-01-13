@@ -41,7 +41,7 @@ function setUser(author) {
 function createId(id) {
     let currentId = id;
     return {
-        setId: function (id) { currentId < id ? currentId = id : currentId },
+        setId: function ({id}) { currentId < id ? currentId = id : currentId },
         getId: function () { return currentId }
     }
 }
@@ -89,7 +89,7 @@ function createChat() {
 function showMessage(message) {
     // Отображает ОДНО сообщение
     const appMessageWindow = document.getElementById('app-message-window');
-    CurrentId.setId(message.id);
+    CurrentId.setId(message);
     appMessageWindow.appendChild(createMessage(message));
 }
 
@@ -97,7 +97,7 @@ function showMessagges(messages) {
     // отображает НЕСКОЛЬКО сообщений
     const appMessageWindow = document.getElementById('app-message-window');
     messages.forEach(message => {
-        CurrentId.setId(message.id);
+        CurrentId.setId(message);
         appMessageWindow.appendChild(createMessage(message));
     });
     appMessageWindow.scrollTop = appMessageWindow.scrollHeight;
@@ -119,7 +119,7 @@ function createMessage(messageObj) {
 
     const messageDate = document.createElement('div');
     messageDate.classList.add('message__date');
-    messageDate.innerText = convertTimestampToDateString(messageObj.timestamp);
+    messageDate.innerText = convertTimestampToDateString(messageObj);
 
     message.appendChild(messageAuthor);
     message.appendChild(messageText);
@@ -130,17 +130,17 @@ function createMessage(messageObj) {
 
 
 // ### --- FUNCTIONS OTHER --- ###
-function defineMessageType(messageObj) {
+function defineMessageType({author}) {
     // Определяет тип сообщения входящее/исходящее
     const user = getUser();
     let messageType;
-    user.name === messageObj.author ?
+    user.name === author ?
         messageType = 'message-outcoming' :
         messageType = 'message-incoming';
     return messageType;
 }
 
-function convertTimestampToDateString(timestamp) {
+function convertTimestampToDateString({timestamp}) {
     const date = new Date(timestamp);
     return date.toLocaleString();
 }
