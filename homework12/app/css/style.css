@@ -1,5 +1,8 @@
+/* prefixed by https://autoprefixer.github.io (PostCSS: v7.0.23, autoprefixer: v9.7.3) */
+
 *{
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 body {
@@ -8,26 +11,50 @@ body {
     margin: 0;
     padding: 0;
     overflow: hidden;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Roboto', sans-serif;
     font-size: 16px;
-    background-color: #333;
+    background-color: #3498db;
 }
 
 #app {
-    width: 100%;
-    height: 100%;
+    width: 60%;
+    height: 90%;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+
+    overflow: hidden;
+    border-radius: 10px;
 }
 
 #app-message-window {
-    width: 60%;
-    height: 60%;
-    background-color: aqua;
+    width: 100%;
+    height: 75%;
+    
+    background-color: #292f42;
     overflow-y: auto;
+    overflow-x: hidden;
+    position: relative;
 }
 
 .message {
@@ -35,52 +62,109 @@ body {
     width: 60%;
     min-width: 60%;
     margin: 30px;
-    padding: 20px 15px;
-    background-color: #fff;
-    color: #333;
+    padding: 5px 15px 10px;
+
+    border-radius: 10px;
+    background-color: #34495e;
+    color: #2c3e50;
+    position: relative;
+}
+
+.message::before {
+    content: '';
+    display: block;
+    width: 16px;
+    height: 16px;
+    border-radius: 2px;
+    background: #34495e;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+    position: absolute;
+    top: 13px;
 }
 
 .message-incoming {
     float: left;
 }
 
+.message-incoming::before {
+    left: -6px;
+}
+
 .message-outcoming {
     float: right;
 }
+.message-outcoming::before {
+    right: -6px;
+}
 
 .message__author {
-
+    color: #3498db;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
 .message__text {
-
+    color: #fff;
+    margin-bottom: 8px;
 }
 
 .message__date {
-
+    color: #3498db;
+    font-style: italic;
+    font-size: 12px;
+    /* opacity: 0.8; */
 }
 
 #app-input-window {
-    width: 60%;
-    height: 30%;
-    background-color: blueviolet;
+    width: 100%;
+    height: 25%;
+    background-color: #333;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
 
-    justify-content: center;
-    align-items: center;
+    -webkit-box-pack: center;
+
+        -ms-flex-pack: center;
+
+            justify-content: center;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
 }
 
 #textarea {
-    height: 90%;
+    height: 80%;
     width: 60%;
 
+    border: none;
+    border-radius: 15px;
     resize: none;
     font-size: 16px;
     outline: none;
     background: #666;
-    color: #fff;
+    color: #ecf0f1;
     padding: 20px;
 }
+
+#textarea::-webkit-input-placeholder {
+    color: rgba(255, 255, 255, .7);
+}
+
+#textarea::-moz-placeholder {
+    color: rgba(255, 255, 255, .7);
+}
+
+#textarea:-ms-input-placeholder {
+    color: rgba(255, 255, 255, .7);
+}
+
+#textarea::-ms-input-placeholder {
+    color: rgba(255, 255, 255, .7);
+}
+
 #textarea::placeholder {
     color: rgba(255, 255, 255, .7);
 }
@@ -90,4 +174,25 @@ body {
     font-size: 16px;
     font-weight: 700;
     margin: 20px 30px;
+
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    background-color: #ecf0f1;
+    color: #333;
+    -webkit-transition: 0.2s;
+    -o-transition: 0.2s;
+    transition: 0.2s;
+}
+
+#send:hover {
+    background-color: rgba(236,240,241,0.85);
+}
+
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background: transparent}
+::-webkit-scrollbar-thumb {
+    background:rgba(52, 152, 219, 0.3);
+    margin-right: 5px;
+    border-radius:5px
 }

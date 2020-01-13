@@ -41,7 +41,7 @@ function setUser(author) {
 function createId(id) {
     let currentId = id;
     return {
-        setId: function ({id}) { currentId < id ? currentId = id : currentId },
+        setId: function ({ id }) { currentId < id ? currentId = id : currentId },
         getId: function () { return currentId }
     }
 }
@@ -60,6 +60,7 @@ function createChat() {
 
     const textarea = document.createElement('textarea');
     textarea.setAttribute('id', 'textarea');
+    textarea.setAttribute('placeholder', 'Отправить...');
     textarea.onkeypress = (event) => {
         if (!(!event.shiftKey && event.key == 'Enter')) return;
         if (!textarea.value.trim() == '') {
@@ -91,6 +92,7 @@ function showMessage(message) {
     const appMessageWindow = document.getElementById('app-message-window');
     CurrentId.setId(message);
     appMessageWindow.appendChild(createMessage(message));
+    appMessageWindow.scrollTop = appMessageWindow.scrollHeight;
 }
 
 function showMessagges(messages) {
@@ -99,8 +101,8 @@ function showMessagges(messages) {
     messages.forEach(message => {
         CurrentId.setId(message);
         appMessageWindow.appendChild(createMessage(message));
+        appMessageWindow.scrollTop = appMessageWindow.scrollHeight;
     });
-    appMessageWindow.scrollTop = appMessageWindow.scrollHeight;
 }
 
 function createMessage(messageObj) {
@@ -130,7 +132,7 @@ function createMessage(messageObj) {
 
 
 // ### --- FUNCTIONS OTHER --- ###
-function defineMessageType({author}) {
+function defineMessageType({ author }) {
     // Определяет тип сообщения входящее/исходящее
     const user = getUser();
     let messageType;
@@ -140,7 +142,7 @@ function defineMessageType({author}) {
     return messageType;
 }
 
-function convertTimestampToDateString({timestamp}) {
+function convertTimestampToDateString({ timestamp }) {
     const date = new Date(timestamp);
     return date.toLocaleString();
 }
@@ -154,7 +156,7 @@ function getMessagesAtInterval(interval) {
                 Array.isArray(data) ? showMessagges(data) : showMessage(data);
             });
         } catch (error) {
-            
+
         }
     }, interval);
 }
