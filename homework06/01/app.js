@@ -4,9 +4,10 @@
 */
 
 window.onload = () => {
-    var curPosition = document.body.offsetHeight;
-    if (curPosition === 4000) scrollUp(curPosition);
-    else scrollDown(curPosition);
+    var curPosition = 0;
+    setTimeout(() => {
+        scrollDown(curPosition);
+    }, 3000);
 }
 
 function scrollDown(curPosition) {
